@@ -1,0 +1,19 @@
+React session: 7th April 2025
+
+
+
+
+Git Url: https://github.com/aniljos/react-en-april-2025
+REST API Mock: https://github.com/aniljos/REST-API-Mock
+crest-ui-library: https://github.com/aniljos/crest-ui-library
+
+Babel cdn: https://cdnjs.com/libraries/babel-standalone/7.26.3
+
+Introduction: https://forms.gle/cGk6U8shtY2owYw87
+
+
+
+
+Email: anil.jos@gmail.com
+
+WA: 9833169784
