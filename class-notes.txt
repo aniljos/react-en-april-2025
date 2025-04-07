@@ -1,6 +1,6 @@
 React session: 7th April 2025
 
-
+Pre-test: https://forms.office.com/r/2pvDgZ2yLz
 
 
 Git Url: https://github.com/aniljos/react-en-april-2025
@@ -10,6 +10,8 @@ crest-ui-library: https://github.com/aniljos/crest-ui-library
 Babel cdn: https://cdnjs.com/libraries/babel-standalone/7.26.3
 
 Introduction: https://forms.gle/cGk6U8shtY2owYw87
+
+Cloud labs: https://forms.office.com/r/2pvDgZ2yLz
 
 
 
