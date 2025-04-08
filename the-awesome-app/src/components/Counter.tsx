@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import Message from './Message';
 
 type CounterProps = {
     initialValue: number
@@ -6,6 +7,7 @@ type CounterProps = {
 
 function Counter(props: CounterProps){
 
+    console.log("rendering counter...");
     const [count, setCount] = useState(props.initialValue);
     
     function inc(){
@@ -29,6 +31,8 @@ function Counter(props: CounterProps){
                 <button onClick={inc}>Inc</button>&nbsp;
                 <button onClick={() => setCount(count - 1)}>Decr</button>
             </div>
+
+            {count > 10 ? <Message text='Hello'/> : null}
         </div>
     )
 }

@@ -36,6 +36,14 @@ Component state
         - setState(updatedValue);
         - setState(callback) => function(currentState){ return üpdatedState}
 
+Form controls(input)
+    - controlled input
+        - state(useState) is bound to the input field
+        - reactive 
+    - uncontrolled input
+        - ref(useRef) to the input field- get/set updatedValue
+        - non-reactive
+
 
 
 Email: anil.jos@gmail.com
