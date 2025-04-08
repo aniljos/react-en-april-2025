@@ -1,0 +1,36 @@
+import {useState} from 'react';
+
+type CounterProps = {
+    initialValue: number
+}
+
+function Counter(props: CounterProps){
+
+    const [count, setCount] = useState(props.initialValue);
+    
+    function inc(){
+        //props.initialValue++;
+        //setCount(count + 1);
+        //setCount(count + 1);
+
+        //setCount(currentCount => currentCount + 1);
+        setCount(function incCount(currentCount){
+            return  currentCount + 1
+        })
+        setCount(currentCount => currentCount + 1);
+
+        console.log("count", count);
+    }
+
+    return (
+        <div>
+            <h3>Counter: {count}</h3>
+            <div>
+                <button onClick={inc}>Inc</button>&nbsp;
+                <button onClick={() => setCount(count - 1)}>Decr</button>
+            </div>
+        </div>
+    )
+}
+
+export default Counter

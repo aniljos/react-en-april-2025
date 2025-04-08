@@ -13,6 +13,28 @@ Introduction: https://forms.gle/cGk6U8shtY2owYw87
 
 Cloud labs: https://forms.office.com/r/2pvDgZ2yLz
 
+Component props:
+    - parameterize a Component
+    - sends data from the parent to the child Component
+    - in the child component, props is read-only
+
+Re-render
+    - props change
+    - state changes
+
+Component state
+    - state update will re-render the component
+    - state updates are asynchronous
+    - state updates are batched
+        - count: 5
+        -  setCount(count + 1); => setCount(6)
+        -  setCount(count + 1); => setCount(6)
+
+        - setCount(currentCount => currentCount + 1);  => setCount(invoke the callback) => invoke the callback => 6
+        - setCount(currentCount => currentCount + 1);  => setCount(invoke the callback) => invoke the callback => 7
+    - setState - 2 signatures(overloads)
+        - setState(updatedValue);
+        - setState(callback) => function(currentState){ return üpdatedState}
 
 
 
