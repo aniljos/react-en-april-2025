@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.3/babel.min.js" integrity="sha512-NyQU9Gq/x36ldUUB9k8SEVCUUIJYxFjtwa7Ndz5h6noqqcSGx3nnmdK26bXiVWlo8ZU147EyJlydvFQEF97I/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>React</title>
+</head>
+
+<body>
+    <h3>React Page</h3>
+    <div id="app1"></div>
+    <div id="app2"></div>
+    <div id="app3"></div>
+    <div id="app4"></div>
+
+    <script type="text/babel">
+        // create a element: <div>This is a React Element</div>, 
+        const element = React.createElement("div", null, "This is a React Element");
+        //and append this element to the div:app1
+        ReactDOM.createRoot(document.getElementById("app1")).render(element);
+
+        // create a element: <div><h4>This is a React Element</h4></div>, 
+        const element1 = React.createElement("div", null,
+            React.createElement("h4", null, "This is another element"));
+
+        //and append this element to the div:app2
+        ReactDOM.createRoot(document.getElementById("app2")).render(element1);
+
+        ReactDOM.createRoot(document.getElementById("app3"))
+                                    .render(<div><h4>This is React JSX</h4></div>)
+
+        // Component (function)
+        function MyComponent(){
+            //return the view(jsx)
+            return (
+                <div>
+                    <h3>Mycomponent</h3>
+                    <p>This is a simple component</p>
+                </div>
+            )
+        }
+        ReactDOM.createRoot(document.getElementById("app4")).render(<MyComponent/>)
+
+
+
+
+
+    </script>
+</body>
+
+</html>
