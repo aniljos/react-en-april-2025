@@ -37,6 +37,8 @@ Component state
     - setState - 2 signatures(overloads)
         - setState(updatedValue);
         - setState(callback) => function(currentState){ return üpdatedState}
+    - state must be treated as immutable
+    
 
 Form controls(input)
     - controlled input
@@ -45,6 +47,18 @@ Form controls(input)
     - uncontrolled input
         - ref(useRef) to the input field- get/set updatedValue
         - non-reactive
+
+Component useEffect
+    - mount 
+        - useEffect(setup, []);
+        - api calls to be invoked once when the compoent is mounted
+        - DOM initialization
+        - regsiter events on the window or document objects
+    - unmount
+        - cancel the api call
+        - unregister events(window, document)
+
+
 
 
 
