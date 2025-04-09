@@ -3,6 +3,7 @@ import Message from './components/Message';
 import Counter from './components/Counter';
 import Login from './components/Login';
 import ListProducts from './components/ListProducts';
+import EditProduct from './components/EditProduct';
 
 function App() {
 
@@ -35,9 +36,9 @@ function App() {
               <Route path='/counter' element={<Counter initialValue={10} />} />
               <Route path='/login' element={<Login/>} />
               <Route path='/products' element={<ListProducts/>} />
+              <Route path='/products/:id' element={<EditProduct/>} />
             </Routes>
         </main>
-
       </Router>
     </div>
   )

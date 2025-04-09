@@ -1,14 +1,18 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { Product } from "../model/Product";
 import './ListProducts.css';
+import ProductView from "./ProductView";
 
 
 const baseUrl = "http://localhost:9000/products";
 
 function ListProducts(){
 
+    let x = 10;
+
     const [products, setProducts] = useState<Product[]>([]);
+    const [isMessageVisible, setMessageVisible] = useState(false);
 
     //on mount  => useEffect(setup methods, empty list of dependencies)
     useEffect(() => {
@@ -31,7 +35,7 @@ function ListProducts(){
         }
     } 
 
-    async function deleteProduct(product: Product){
+    const deleteProduct = useCallback( async function deleteProduct(product: Product){
 
         try{
             
@@ -50,25 +54,44 @@ function ListProducts(){
         }catch{
             alert("failed to delete product" + product.id);
         }
-    }
+    }, [products])
+
+    const totalPrices = useMemo( () => {
+
+        console.log("calculating prices...");
+        let totalPrices = 0;
+        products.forEach(p => {
+
+            if(p.price)
+                totalPrices += p.price;
+        })
+        return totalPrices;
+
+    }, [products])
 
     return (
         <div>
             <h3>List Products</h3>
 
+            <div>Total Prices: {totalPrices}</div>
+
+            {isMessageVisible ? <div className="alert alert-primary">Page to demonstrate component optimization</div>: null}
+            <button className="btn btn-primary" onClick={() => setMessageVisible(!isMessageVisible)}>Hide/Show</button>
+
             <div style={{display: "flex", flexFlow: "row wrap", justifyContent: "center"}}>
                 {products.map(product => {
                     return (
-                        <div key={product.id} className="product">
-                            <p>Id: {product.id}</p>
-                            <p>{product.name}</p>
-                            <p>{product.description}</p>
-                            <p>Price: {product.price}</p>
-                            <div>
-                                <button className="btn btn-warning" onClick={() => {deleteProduct(product)}}>Delete</button>&nbsp;
-                                <button className="btn btn-info">Edit</button>
-                            </div>
-                        </div>
+                        // <div key={product.id} className="product">
+                        //     <p>Id: {product.id}</p>
+                        //     <p>{product.name}</p>
+                        //     <p>{product.description}</p>
+                        //     <p>Price: {product.price}</p>
+                        //     <div>
+                        //         <button className="btn btn-warning" onClick={() => {deleteProduct(product)}}>Delete</button>&nbsp;
+                        //         <button className="btn btn-info">Edit</button>
+                        //     </div>
+                        // </div>
+                        <ProductView key={product.id} product={product} onDelete={deleteProduct}/>
                     )
                 })}
             </div>

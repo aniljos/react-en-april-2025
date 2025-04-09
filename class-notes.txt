@@ -38,7 +38,7 @@ Component state
         - setState(updatedValue);
         - setState(callback) => function(currentState){ return üpdatedState}
     - state must be treated as immutable
-    
+
 
 Form controls(input)
     - controlled input
@@ -58,7 +58,29 @@ Component useEffect
         - cancel the api call
         - unregister events(window, document)
 
+Components Design
+    - Keep the component granular
+        - Modular, Easy maintain
+        - Easy to optimize
+        - Easy to test(Unit)
+    - High Order Components(HOC)
+        - Pattern to implement extensibility
+        - Example: React.memo
+    
+Component optimize
+    - React.memo
+    - hooks
+        - useCallback
+        - useMemo
 
+Redux
+    -store
+        - all the data is stored
+    - action: object
+        - {type: "set_token", token: "abc"}
+        - {type: "clear_token"}
+    - reducer: function 
+        - accepts the actions and update the state in the store
 
 
 
