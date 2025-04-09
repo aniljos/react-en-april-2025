@@ -13,6 +13,8 @@ Introduction: https://forms.gle/cGk6U8shtY2owYw87
 
 Cloud labs: https://forms.office.com/r/2pvDgZ2yLz
 
+Quiz #1: https://forms.gle/BMdLfRy3jBDc4UTA9
+
 Component props:
     - parameterize a Component
     - sends data from the parent to the child Component
