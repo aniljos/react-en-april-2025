@@ -1,6 +1,7 @@
 import {useState, ChangeEvent} from 'react'
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 function Login(){
 
@@ -8,6 +9,7 @@ function Login(){
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     function handleUserName(evt: ChangeEvent<HTMLInputElement>){
 
@@ -29,12 +31,19 @@ function Login(){
             try{
                 const resp = await axios.post(url, {name: username, password});
                 console.log("success", resp);
-                navigate("/");
+                dispatch({type: "login", payload: {
+                    isAuthenticated: true,
+                    username,
+                    accessToken: resp.data.accessToken,
+                    refreshToken: resp.data.refreshToken
+                }})
+                navigate("/products");
 
             }
             catch(error){
                 console.log("failed", error);
-                setMessage("Invalid credentials")
+                setMessage("Invalid credentials");
+                dispatch({type: "logout"})
             }
 
         }

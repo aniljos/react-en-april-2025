@@ -73,14 +73,38 @@ Component optimize
         - useCallback
         - useMemo
 
+Share data across the application
+    - Browsers
+        - cookies
+        - localStorage: persistant
+        - sessionStorage: non-persistant
+    - Memory of the Browser
+        - Redux
+        - React Context
+
 Redux
     -store
         - all the data is stored
+        - one per application
     - action: object
         - {type: "set_token", token: "abc"}
         - {type: "clear_token"}
     - reducer: function 
         - accepts the actions and update the state in the store
+        - one per store
+            - pattern : multiple reducres and combine to a single reducer
+    - library
+        - react-redux : to integrate redux with react
+        - redux toolkit : opionated library with implemention of common patterns
+    -react-redux    
+        - Provider compoment: integrte the store to the react application
+        - hooks
+            - useDispatch: returns a dispatch function
+            - useSelector: select(read) a state from store, subscribes
+            - useStore: returns a handle to the store
+
+
+
 
 
 

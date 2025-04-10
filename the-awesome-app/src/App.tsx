@@ -4,6 +4,7 @@ import Counter from './components/Counter';
 import Login from './components/Login';
 import ListProducts from './components/ListProducts';
 import EditProduct from './components/EditProduct';
+import TodoList from './components/TodoList';
 
 function App() {
 
@@ -24,19 +25,22 @@ function App() {
                 <Link className="nav-link" to="/products">Products</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/todos">Todo</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/login">Login</Link>
               </li>
             </ul>
           </div>
         </nav>
-
         <main>
             <Routes>
               <Route path='/' element={<Message text='Hello React Vite' color='blue'/>} />
               <Route path='/counter' element={<Counter initialValue={10} />} />
               <Route path='/login' element={<Login/>} />
-              <Route path='/products' element={<ListProducts/>} />
+              <Route path='/products' element={ <ListProducts/>} />
               <Route path='/products/:id' element={<EditProduct/>} />
+              <Route path='/todos' element={ <TodoList/>} />
             </Routes>
         </main>
       </Router>
