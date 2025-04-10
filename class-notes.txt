@@ -19,6 +19,9 @@ Component props:
     - parameterize a Component
     - sends data from the parent to the child Component
     - in the child component, props is read-only
+    - <Message text="hello" /> => props.text
+    - <Message> hello </Message> => props.children
+
 
 Re-render
     - props change
@@ -102,6 +105,23 @@ Redux
             - useDispatch: returns a dispatch function
             - useSelector: select(read) a state from store, subscribes
             - useStore: returns a handle to the store
+    - redux toolkit
+        -slices
+            - replaces the reducer
+            - treat the state as mutable
+            - generate the reducer
+            - generate the action creators(helper functions to create actions)
+    - middleware
+        - intercepts the actions
+        - logging, validation, asynchronous calls
+        - libraries : redux thunk, redux saga
+
+React Context   
+    - part of react library
+    - Its a low-level API
+    - Multiple contexts
+    - hook
+        -useContext: read the context in a component 
 
 
 

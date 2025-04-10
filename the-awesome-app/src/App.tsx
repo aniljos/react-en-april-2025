@@ -1,38 +1,18 @@
-import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Message from './components/Message';
 import Counter from './components/Counter';
 import Login from './components/Login';
 import ListProducts from './components/ListProducts';
 import EditProduct from './components/EditProduct';
 import TodoList from './components/TodoList';
+import AppBar from './components/AppBar';
 
 function App() {
 
   return (
     <div className="container">
       <Router>
-        <nav className="navbar navbar-dark bg-dark">
-          <div className="container-fluid">
-            <Link className="navbar-brand" to="/">React-Vite</Link>
-            <ul className="nav">
-              <li className="nav-item">
-                <Link className="nav-link active" to="/">Home</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/counter">Counter</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/products">Products</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/todos">Todo</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">Login</Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <AppBar/>
         <main>
             <Routes>
               <Route path='/' element={<Message text='Hello React Vite' color='blue'/>} />
