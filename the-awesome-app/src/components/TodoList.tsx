@@ -11,12 +11,16 @@ function TodoList(){
     //     {id: 1, text: "Call Office", isCompleted: false}
     // ])
     const items = useSelector((state: AppState) => state.todo.items);
+    const status  = useSelector((state: AppState) => state.todo.status)
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
 
-        const action = fetchTodos();
-        dispatch(action);
+        if(status === 'pending'){
+            const action = fetchTodos();
+            dispatch(action);
+        }
+       
 
     }, [])
 
@@ -31,9 +35,9 @@ function TodoList(){
         <div>
             <h3>Todo List</h3>
 
-            {/* <div className="mb-3">
+            <div className="mb-3">
                 <Link to="/todos/new" className="btn btn-primary">New Todo</Link>
-            </div> */}
+            </div>
 
             <table className="table">
                 <thead>

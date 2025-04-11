@@ -1,11 +1,11 @@
 import axios from "axios";
-import { useEffect, useState, useCallback, useMemo } from "react";
+import {  useState, useCallback, useMemo } from "react";
 import { Product } from "../model/Product";
 import './ListProducts.css';
 import ProductView from "./ProductView";
-import { useSelector } from "react-redux";
-import { AppState } from "../redux/store";
-import { useNavigate } from "react-router-dom";
+
+import { useTitle } from "../hooks/useTitle";
+import { useProducts } from "../hooks/useProducts";
 
 
 //const baseUrl = "http://localhost:9000/products";
@@ -13,37 +13,13 @@ const baseUrl = "http://localhost:9000/secure_products";
 
 function ListProducts(){
 
-    const [products, setProducts] = useState<Product[]>([]);
+    const {products, setProducts} = useProducts(baseUrl);
     const [isMessageVisible, setMessageVisible] = useState(false);
-    const auth = useSelector((state: AppState) => state.auth);
-    const navigate = useNavigate();
+    useTitle("Products");
 
     //on mount  => useEffect(setup methods, empty list of dependencies)
-    useEffect(() => {
-        console.log("listproducts mounted");
-        fetchProducts();
-        return () => {
-            console.log("listproducts unmounted");
-        }
-    }, [])
-    async function fetchProducts(){
-
-        try {
-            
-            if(!auth.isAuthenticated){
-                navigate("/login");
-                return;
-            }
-
-            const headers = { "Authorization" : `Bearer ${auth.accessToken}`}
-            const response = await axios.get<Product[]>(baseUrl,{headers: headers});
-            console.log("success", response.data);
-            setProducts(response.data);
-
-        } catch(err) {
-            console.log("error", err);
-        }
-    } 
+   
+   
 
     const deleteProduct = useCallback( async function deleteProduct(product: Product){
 

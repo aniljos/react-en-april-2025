@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import Message from './Message';
+import { useTitle } from '../hooks/useTitle';
 
 type CounterProps = {
     initialValue: number
@@ -9,6 +10,7 @@ function Counter(props: CounterProps){
 
     console.log("rendering counter...");
     const [count, setCount] = useState(props.initialValue);
+    useTitle("Counter");
     
     function inc(){
         //props.initialValue++;

@@ -2,6 +2,8 @@ import {useState, ChangeEvent} from 'react'
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useTitle } from '../hooks/useTitle';
+import { Button } from 'crest-ui-library';
 
 function Login(){
 
@@ -10,6 +12,10 @@ function Login(){
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    useTitle("Login");
+    
+
+  
 
     function handleUserName(evt: ChangeEvent<HTMLInputElement>){
 
@@ -70,7 +76,8 @@ function Login(){
             </div>
 
             <br />
-            <button className="btn btn-primary" onClick={handleLogin}>Login</button>
+            {/* <button className="btn btn-primary" onClick={handleLogin}>Login</button> */}
+            <Button text="Signin" onClick={handleLogin}/>
         </div>
     )
 }

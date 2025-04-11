@@ -72,6 +72,9 @@ Components Design
     - High Order Components(HOC)
         - Pattern to implement extensibility
         - Example: React.memo
+    - Custom hooks
+        - reuseble/Modular
+        - A function that use other hooks
     
 Component optimize
     - React.memo
