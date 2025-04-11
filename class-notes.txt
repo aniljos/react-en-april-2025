@@ -6,6 +6,7 @@ Pre-test: https://forms.office.com/r/2pvDgZ2yLz
 Git Url: https://github.com/aniljos/react-en-april-2025
 REST API Mock: https://github.com/aniljos/REST-API-Mock
 crest-ui-library: https://github.com/aniljos/crest-ui-library
+MFE: https://github.com/aniljos/mfe-react-vite
 
 Babel cdn: https://cdnjs.com/libraries/babel-standalone/7.26.3
 
@@ -13,7 +14,9 @@ Introduction: https://forms.gle/cGk6U8shtY2owYw87
 
 Cloud labs: https://forms.office.com/r/2pvDgZ2yLz
 
+
 Quiz #1: https://forms.gle/BMdLfRy3jBDc4UTA9
+Quiz #2: https://forms.gle/2w3uA8NnSjRahcje8
 
 Component props:
     - parameterize a Component
