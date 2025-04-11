@@ -3,6 +3,7 @@ import { TodoItem } from "../model/TodoItem";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, AppState } from "../redux/store";
 import { fetchTodos, setCompleted } from "../redux/todoReducer";
+import { Link } from "react-router-dom";
 
 function TodoList(){
 
@@ -29,6 +30,10 @@ function TodoList(){
     return (
         <div>
             <h3>Todo List</h3>
+
+            {/* <div className="mb-3">
+                <Link to="/todos/new" className="btn btn-primary">New Todo</Link>
+            </div> */}
 
             <table className="table">
                 <thead>
